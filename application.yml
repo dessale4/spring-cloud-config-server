@@ -3,14 +3,16 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
   instance:
-    hostname: localhost
+    prefer-ip-address: true      # safer across Docker/hosts
+    # optional but helpful if you run behind NAT/containers:
+    # ip-address: ${HOST_IP:}    # set via env if needed
     
 microservices:
   payment-service:
     endpoints:
       doPayment:
-        uri: http://PAYMENT_SERVICE/payment/doPayment
+        uri: lb://PAYMENT_SERVICE/payment/doPayment
   order-service:
     endpoints:
       bookOrder:
-        uri: http://ORDER_SERVICE/payment/bookOrder
+        uri: lb://ORDER_SERVICE/order/bookOrder
