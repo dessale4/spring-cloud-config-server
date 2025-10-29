@@ -11,8 +11,8 @@ microservices:
   payment-service:
     endpoints:
       doPayment:
-        uri: lb://PAYMENT_SERVICE/payment/doPayment
+        uri: lb://payment-service/payment/doPayment
   order-service:
     endpoints:
       bookOrder:
-        uri: lb://ORDER_SERVICE/order/bookOrder
+        uri: lb://order-service/order/bookOrder
