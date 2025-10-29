@@ -9,8 +9,8 @@ microservices:
   payment-service:
     endpoints:
       doPayment:
-        uri: http://PAYMENT-SERVICE/payment/doPayment
+        uri: http://PAYMENT_SERVICE/payment/doPayment
   order-service:
     endpoints:
       bookOrder:
-        uri: http://ORDER-SERVICE/payment/bookOrder
+        uri: http://ORDER_SERVICE/payment/bookOrder
